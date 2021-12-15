@@ -29,17 +29,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import {
-  defineComponent,
-  ref,
-  onMounted,
-  watch,
-  computed,
-  nextTick,
-} from "vue";
+<script>
+import { ref, onMounted, watch, computed, nextTick } from "vue";
 
-export default defineComponent({
+export default {
   setup() {
     //ゲームが開始しているかのフラグ
     let startFlg = ref(false);
@@ -53,8 +46,7 @@ export default defineComponent({
       console.log(startFlg.value);
       //startボタンを押すとinputにフォーカスする。
       nextTick(() => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        document.getElementById("typeForm")!.focus();
+        document.getElementById("typeForm").focus();
       });
     };
     //現在の問題
@@ -70,8 +62,6 @@ export default defineComponent({
       "onmouseover",
       "onscroll",
       "onselect",
-      "document.getElementById()",
-      "document.getElementByClassName()",
       "toLocaleString",
     ]);
 
@@ -87,7 +77,7 @@ export default defineComponent({
      * 配列を並び替える処理.
      */
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const arrayShuffle = (array: any) => {
+    const arrayShuffle = (array) => {
       for (let i = array.length - 1; 0 < i; i--) {
         // 0〜(i+1)の範囲で値を取得
         const r = Math.floor(Math.random() * (i + 1));
@@ -181,91 +171,5 @@ export default defineComponent({
       arrayShuffle,
     };
   },
-});
+};
 </script>
-
-//
-<style lang="scss">
-// * {
-//   font-family: "Fredoka One", cursive;
-// }
-// .mb-20 {
-//   margin-bottom: 20px;
-// }
-// .container {
-//   width: 400px;
-//   margin: 0 auto;
-//   text-align: center;
-// }
-
-// .title {
-//   position: relative;
-//   font-size: 30px;
-// }
-
-// .startBtn {
-//   background-color: #a6d5e7;
-//   color: white;
-//   padding: 4px 60px;
-//   border: none;
-//   outline: none;
-//   border-radius: 8px;
-//   cursor: pointer;
-// }
-
-// .startBtn:hover {
-//   opacity: 0.7;
-// }
-
-// .question {
-//   color: grey;
-//   font-size: 40px;
-// }
-
-// .clear {
-//   color: rgb(255, 123, 0);
-//   font-size: 50px;
-// }
-// .typeForm {
-//   text-align: center;
-//   outline: none;
-//   border: none;
-//   font-size: 30px;
-// }
-
-// .typeFormWrapper {
-//   border-bottom: 1px solid grey;
-// }
-
-// .gauge {
-//   height: 18px;
-//   transition: all 0.3s ease;
-//   border-radius: 20px;
-// }
-
-// .gaugeWrapper {
-//   border: 1px solid;
-//   height: 18px;
-//   border-radius: 20px;
-//   background-color: white;
-// }
-
-// .questionCount {
-//   font-size: 20px;
-// }
-
-// .backBtn {
-//   background-color: #a6d5e7;
-//   color: white;
-//   padding: 4px 60px;
-//   border: none;
-//   outline: none;
-//   border-radius: 8px;
-//   cursor: pointer;
-// }
-
-// .backBtn:hover {
-//   opacity: 0.7;
-// }
-//
-</style>

@@ -1,0 +1,85 @@
+* {
+  font-family: "Fredoka One", cursive;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container .title {
+  position: relative;
+  font-size: 30px;
+}
+
+.container .gameScreen .startBtn {
+  background-color: #a6d5e7;
+  color: white;
+  padding: 4px 60px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .gameScreen .startBtn:hover {
+  opacity: 0.7;
+}
+
+.container .gameScreen .questionWrapper .question {
+  color: grey;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.container .gameScreen .questionWrapper .clear {
+  color: #ff7b00;
+  font-size: 50px;
+}
+
+.container .gameScreen .questionWrapper .typeFormWrapper {
+  border-bottom: 1px solid grey;
+  margin-bottom: 20px;
+}
+
+.container .gameScreen .questionWrapper .typeFormWrapper .typeForm {
+  text-align: center;
+  outline: none;
+  border: none;
+  font-size: 30px;
+}
+
+.container .gameScreen .questionWrapper .gaugeWrapper {
+  border: 1px solid;
+  height: 18px;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.container .gameScreen .questionWrapper .gaugeWrapper .gauge {
+  height: 18px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.container .gameScreen .questionWrapper .questionCount {
+  font-size: 20px;
+}
+
+.container .gameScreen .backBtn {
+  background-color: #a6d5e7;
+  color: white;
+  padding: 4px 60px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .gameScreen .backBtn:hover {
+  opacity: 0.7;
+}
+/*# sourceMappingURL=style.css.map */

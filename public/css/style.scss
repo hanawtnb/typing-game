@@ -1,0 +1,75 @@
+@mixin mb-20 {
+  margin-bottom: 20px;
+}
+
+@mixin btn {
+  background-color: #a6d5e7;
+  color: white;
+  padding: 4px 60px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+* {
+  font-family: "Fredoka One", cursive;
+}
+.container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  .title {
+    position: relative;
+    font-size: 30px;
+  }
+  .gameScreen {
+    .startBtn {
+      @include btn;
+    }
+    .startBtn:hover {
+      opacity: 0.7;
+    }
+    .questionWrapper {
+      .question {
+        color: grey;
+        font-size: 40px;
+        @include mb-20;
+      }
+      .clear {
+        color: rgb(255, 123, 0);
+        font-size: 50px;
+      }
+      .typeFormWrapper {
+        border-bottom: 1px solid grey;
+        @include mb-20;
+        .typeForm {
+          text-align: center;
+          outline: none;
+          border: none;
+          font-size: 30px;
+        }
+      }
+      .gaugeWrapper {
+        border: 1px solid;
+        height: 18px;
+        border-radius: 20px;
+        background-color: white;
+        @include mb-20;
+        .gauge {
+          height: 18px;
+          transition: all 0.3s ease;
+          border-radius: 20px;
+        }
+      }
+      .questionCount {
+        font-size: 20px;
+      }
+    }
+    .backBtn {
+      @include btn;
+    }
+    .backBtn:hover {
+      opacity: 0.7;
+    }
+  }
+}
