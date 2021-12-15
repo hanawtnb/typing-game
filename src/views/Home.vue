@@ -80,7 +80,7 @@ export default defineComponent({
     });
 
     /**
-     * 問題集を並び替える処理.
+     * 配列を並び替える処理.
      */
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const arrayShuffle = (array: any) => {
@@ -95,9 +95,10 @@ export default defineComponent({
       }
       return array;
     };
-    for (let i = 0; i < 5; i++) {
-      console.log(arrayShuffle(questions.value));
-    }
+
+    //問題の配列の並び替え
+    console.log(arrayShuffle(questions.value));
+
     //入力欄
     const typeBox = ref("");
 
