@@ -24,6 +24,8 @@
         </div>
       </div>
       <br />
+
+      <button class="backBtn" v-if="clearFlg" @click="init">戻る</button>
     </div>
   </div>
 </template>
@@ -133,6 +135,13 @@ export default defineComponent({
       };
     });
 
+    /**
+     * 更新処理.
+     */
+    const init = () => {
+      location.reload();
+    };
+
     return {
       startFlg,
       gameStart,
@@ -144,6 +153,7 @@ export default defineComponent({
       questionCount,
       styleObject,
       clearFlg,
+      init,
     };
   },
 });
@@ -173,7 +183,7 @@ export default defineComponent({
 }
 
 .startBtn {
-  background-color: #87ceeb;
+  background-color: #a6d5e7;
   color: white;
   padding: 4px 60px;
   border: none;
@@ -221,5 +231,19 @@ export default defineComponent({
 
 .questionCount {
   font-size: 20px;
+}
+
+.backBtn {
+  background-color: #a6d5e7;
+  color: white;
+  padding: 4px 60px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.backBtn:hover {
+  opacity: 0.7;
 }
 </style>
