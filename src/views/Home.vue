@@ -2,7 +2,6 @@
   <div class="container">
     <div class="title">
       <h1>Typing Game</h1>
-      <div class="marker"></div>
     </div>
     <div class="gameScreen">
       <button v-if="startFlg != true" class="startBtn mb-20" @click="gameStart">
@@ -54,21 +53,26 @@ export default defineComponent({
       console.log(startFlg.value);
       //startボタンを押すとinputにフォーカスする。
       nextTick(() => {
-        document.getElementById("typeForm").focus();
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        document.getElementById("typeForm")!.focus();
       });
     };
     //現在の問題
     const currentQuestion = ref("");
     //問題集
     const questions = ref([
-      "apple",
-      "banana",
-      "chocolate",
-      "coffee",
-      "yay",
-      "hey",
-      "hoo",
-      "wooo",
+      "onclick",
+      "onchange",
+      "ondblclick",
+      "ondrag",
+      "onkeypress",
+      "onload",
+      "onmouseover",
+      "onscroll",
+      "onselect",
+      "document.getElementById()",
+      "document.getElementByClassName()",
+      "toLocaleString",
     ]);
 
     /**
@@ -180,91 +184,88 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-* {
-  font-family: "Fredoka One", cursive;
-}
-.mb-20 {
-  margin-bottom: 20px;
-}
-.container {
-  width: 400px;
-  margin: 0 auto;
-  text-align: center;
-}
+//
+<style lang="scss">
+// * {
+//   font-family: "Fredoka One", cursive;
+// }
+// .mb-20 {
+//   margin-bottom: 20px;
+// }
+// .container {
+//   width: 400px;
+//   margin: 0 auto;
+//   text-align: center;
+// }
 
-.title {
-  position: relative;
-  font-size: 30px;
-}
+// .title {
+//   position: relative;
+//   font-size: 30px;
+// }
 
-.gameScreen {
-  background-color: white;
-  padding: 40px;
-}
+// .startBtn {
+//   background-color: #a6d5e7;
+//   color: white;
+//   padding: 4px 60px;
+//   border: none;
+//   outline: none;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
 
-.startBtn {
-  background-color: #a6d5e7;
-  color: white;
-  padding: 4px 60px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+// .startBtn:hover {
+//   opacity: 0.7;
+// }
 
-.startBtn:hover {
-  opacity: 0.7;
-}
+// .question {
+//   color: grey;
+//   font-size: 40px;
+// }
 
-.question {
-  color: grey;
-  font-size: 40px;
-}
+// .clear {
+//   color: rgb(255, 123, 0);
+//   font-size: 50px;
+// }
+// .typeForm {
+//   text-align: center;
+//   outline: none;
+//   border: none;
+//   font-size: 30px;
+// }
 
-.clear {
-  color: rgb(255, 123, 0);
-  font-size: 50px;
-}
-.typeForm {
-  text-align: center;
-  outline: none;
-  border: none;
-  font-size: 30px;
-}
+// .typeFormWrapper {
+//   border-bottom: 1px solid grey;
+// }
 
-.typeFormWrapper {
-  border-bottom: 1px solid grey;
-}
+// .gauge {
+//   height: 18px;
+//   transition: all 0.3s ease;
+//   border-radius: 20px;
+// }
 
-.gauge {
-  height: 18px;
-  transition: all 0.3s ease;
-  border-radius: 20px;
-}
+// .gaugeWrapper {
+//   border: 1px solid;
+//   height: 18px;
+//   border-radius: 20px;
+//   background-color: white;
+// }
 
-.gaugeWrapper {
-  border: 1px solid;
-  height: 18px;
-  border-radius: 20px;
-  background-color: white;
-}
+// .questionCount {
+//   font-size: 20px;
+// }
 
-.questionCount {
-  font-size: 20px;
-}
+// .backBtn {
+//   background-color: #a6d5e7;
+//   color: white;
+//   padding: 4px 60px;
+//   border: none;
+//   outline: none;
+//   border-radius: 8px;
+//   cursor: pointer;
+// }
 
-.backBtn {
-  background-color: #a6d5e7;
-  color: white;
-  padding: 4px 60px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.backBtn:hover {
-  opacity: 0.7;
-}
+// .backBtn:hover {
+//   opacity: 0.7;
+// }
+//
 </style>
